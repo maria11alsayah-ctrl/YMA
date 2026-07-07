@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>For Yousef</title>
-    <!-- Google Fonts for Elegant Handwriting and Serif styles -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Reenie+Beanie&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
@@ -17,7 +16,7 @@
         }
 
         body {
-            background-color: #f9f6f0; /* Cream background */
+            background-color: #f9f6f0;
             font-family: 'Lora', serif;
             color: #2c2a29;
             overflow-x: hidden;
@@ -28,7 +27,6 @@
             transition: background-color 1.2s ease;
         }
 
-        /* Pure white background state for the P.S. surprise */
         body.pure-white {
             background-color: #ffffff;
         }
@@ -44,7 +42,6 @@
             position: relative;
         }
 
-        /* Screen management */
         .screen {
             position: absolute;
             width: calc(100% - 40px);
@@ -67,7 +64,6 @@
             transform: translateY(0);
         }
 
-        /* Ivory Paper Aesthetic */
         .paper-card {
             background: #fffdf9;
             width: 100%;
@@ -85,14 +81,12 @@
             transition: background-color 1.2s ease, box-shadow 1.2s ease, border-color 1.2s ease;
         }
 
-        /* Minimal white canvas for the ultimate PS line */
         .paper-card.invisible-card {
             background: transparent;
             box-shadow: none;
             border-color: transparent;
         }
 
-        /* Envelope / Cover Styling */
         .envelope-container {
             width: 100%;
             height: 280px;
@@ -143,7 +137,6 @@
             animation: pulse 2s infinite;
         }
 
-        /* Typography */
         h1.handwriting {
             font-family: 'Reenie Beanie', cursive;
             font-size: 3rem;
@@ -161,7 +154,6 @@
             white-space: pre-line;
         }
 
-        /* Image Display Screens */
         .photo-frame {
             width: 100%;
             height: 65%;
@@ -191,7 +183,6 @@
             min-height: 60px;
         }
 
-        /* Interactive Buttons */
         .btn-continue {
             font-family: 'Lora', serif;
             background: none;
@@ -234,7 +225,6 @@
             background: rgba(0,0,0,0.01);
         }
 
-        /* Subtle Floating Hearts Backing */
         .floating-hearts-container {
             position: absolute;
             width: 100%;
@@ -254,7 +244,6 @@
             bottom: -20px;
         }
 
-        /* Animations */
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.15); }
@@ -278,10 +267,8 @@
 <body>
 
     <div class="stage">
-        <!-- Floating Hearts Layer -->
         <div class="floating-hearts-container" id="heartsContainer"></div>
 
-        <!-- SCREEN 0: Envelope Cover -->
         <div class="screen active" id="screen0">
             <div class="envelope-container" onclick="nextScreen(1)">
                 <div class="envelope-line"></div>
@@ -294,7 +281,6 @@
             </div>
         </div>
 
-        <!-- SCREEN 1: Introduction Letter -->
         <div class="screen" id="screen1">
             <div class="paper-card">
                 <div></div>
@@ -314,11 +300,10 @@
             </div>
         </div>
 
-        <!-- SCREEN 2: First Baby Photo (IMG_6802.png) -->
         <div class="screen" id="screen2">
             <div class="paper-card">
                 <div class="photo-frame">
-                    <img src="IMG_6802.png" alt="Yousef Baby Photo">
+                    <img src="IMG_6802.png" alt="Photo">
                 </div>
                 <div class="dynamic-text">
                     <p class="letter-text">Before I knew your smile...<br>Before I knew your voice...<br>Before I fell in love with you...<br>There was just this little boy.</p>
@@ -327,11 +312,10 @@
             </div>
         </div>
 
-        <!-- SCREEN 3: Second Baby Photo (IMG_6805.jpeg) -->
         <div class="screen" id="screen3">
             <div class="paper-card">
                 <div class="photo-frame">
-                    <img src="IMG_6805.jpeg" alt="Yousef with his sister">
+                    <img src="IMG_6805.jpeg" alt="Photo">
                 </div>
                 <div class="dynamic-text">
                     <p class="letter-text">I wonder what little Yousef dreamed about.<br>I hope he'd be proud of the man you've become.<br>Because I know I am.</p>
@@ -340,11 +324,10 @@
             </div>
         </div>
 
-        <!-- SCREEN 4: Photo Together Frame (IMG_6807.jpeg) -->
         <div class="screen" id="screen4">
             <div class="paper-card">
                 <div class="photo-frame">
-                    <img src="IMG_6807.jpeg" alt="Our Photo Together">
+                    <img src="IMG_6807.jpeg" alt="Photo">
                 </div>
                 <div class="dynamic-text">
                     <p class="letter-text">And now...<br>This is my favorite photo.<br>Because this is where my favorite person is.</p>
@@ -353,7 +336,6 @@
             </div>
         </div>
 
-        <!-- SCREEN 5: Final Heartfelt Letter -->
         <div class="screen" id="screen5">
             <div class="paper-card" style="justify-content: center; padding: 30px 25px;">
                 <p class="letter-text" style="font-family: 'Lora', serif; line-height: 2; text-align: left; width: 100%; max-width: 320px; margin: 0 auto;">
@@ -378,7 +360,6 @@
             </div>
         </div>
 
-        <!-- SCREEN 6: Tiny Surprise P.S. (Fades to clean white display) -->
         <div class="screen" id="screen6">
             <div class="paper-card invisible-card" style="justify-content: center;">
                 <p class="letter-text" style="font-size: 1.15rem; line-height: 2.2; text-align: center; font-style: italic;">
@@ -397,7 +378,6 @@
 
     <script>
         function nextScreen(screenIndex) {
-            // Trigger background fade to pure white when entering the last P.S. screen
             if (screenIndex === 6) {
                 document.body.classList.add('pure-white');
             } else {
@@ -418,7 +398,6 @@
             nextScreen(0);
         }
 
-        // Background Atmosphere: Generate micro floating hearts subtly
         function createFloatingHeart() {
             const container = document.getElementById('heartsContainer');
             if (!container) return;
@@ -443,3 +422,4 @@
     </script>
 </body>
 </html>
+
